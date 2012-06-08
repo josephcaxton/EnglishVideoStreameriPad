@@ -30,7 +30,7 @@
 	self.FirstView = [[UIView alloc] initWithFrame:FirstViewframe];
     
     LoginTitle = [[NSString alloc] initWithString:@""];
-    Image = [UIImage imageNamed:@"MathsBackground.png"];
+    Image = [UIImage imageNamed:@"EnglishBackground.png"];
     ImageView = [[UIImageView alloc] initWithImage:Image];
    // ImageView.frame = CGRectMake(0 ,0, 540, 950);
     ImageView.frame = CGRectMake(60 ,200, 640, 480);

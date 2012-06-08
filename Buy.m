@@ -233,7 +233,7 @@ int dontShowPriceList = 0;
     
    
             
-    SKPayment *payment = [SKPayment paymentWithProductIdentifier:SelectedProductid.productIdentifier];
+    SKPayment *payment = [SKPayment paymentWithProduct:SelectedProductid];
             [[SKPaymentQueue defaultQueue] addPayment:payment];
            			
 	

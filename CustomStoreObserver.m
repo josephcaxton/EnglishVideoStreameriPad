@@ -353,6 +353,7 @@
     if(textView.tag == 1717){
         if(textView.text.length > 0 ){
         //EmailAddress = [[NSString alloc] initWithString: textView.text];
+        
         [textView resignFirstResponder];
         return true;
         }
@@ -368,6 +369,7 @@
     else if(textView.tag == 1818){
           if(textView.text.length > 0 ){
         //Password = [[NSString alloc]initWithString: textView.text];
+        
         [textView resignFirstResponder];
         return true;
           }

@@ -269,13 +269,15 @@
     if(textView.tag == 1717){
         if(UsernameText.text.length > 0 ){
             
+            
             [UsernameText resignFirstResponder];
+            
             
             return true;
         }
         else
         {
-            
+           
             [UsernameText resignFirstResponder];
             return true;
         }
@@ -286,12 +288,14 @@
             
         if(PasswordText.text.length > 0 ){
             
+           
             [PasswordText resignFirstResponder];
             
             return true;
             }
         else
             {
+                
                 [PasswordText resignFirstResponder];
                 return true;
                 
@@ -302,6 +306,7 @@
         return false;
     }
 }
+
 
 
 
@@ -614,6 +619,7 @@
     
     [textField resignFirstResponder];
     
+    //[textField setEnablesReturnKeyAutomatically:NO];
     return YES;
 
 }

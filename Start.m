@@ -25,7 +25,17 @@
     
 
     
-    self.navigationItem.title = @"www.LearnersCloud.com";
+    self.navigationItem.title = @"English from LearnersCloud";
+    
+    self.navigationItem.backBarButtonItem =
+    [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                     style:UIBarButtonItemStyleBordered
+                                    target:nil
+                                    action:nil];
+
+    UINavigationController *nav =self.navigationController;
+    nav.navigationBar.tintColor = [UIColor blackColor];
+    
     CGRect FirstViewframe = CGRectMake(0 ,0, SCREEN_WIDTH, SCREEN_HEIGHT);
 	self.FirstView = [[UIView alloc] initWithFrame:FirstViewframe];
     
@@ -44,10 +54,11 @@
     
    
     FreeVideos = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [FreeVideos setTitle:@"Start here to view free and subscription videos!" forState:UIControlStateNormal];
+    //[FreeVideos setTitle:@"Start here to view free and subscription videos!" forState:UIControlStateNormal];
     FreeVideos.frame = CGRectMake(85 ,100, 600, 44);
-   // UIImage *FreeVideosbuttonImage = [UIImage imageNamed:@"YellowBackground.png"];
-   // [FreeVideos setBackgroundImage:FreeVideosbuttonImage forState:UIControlStateNormal];
+    UIImage *FreeVideosbuttonImage = [UIImage imageNamed:@"starthere.png"];
+    [FreeVideos setBackgroundImage:FreeVideosbuttonImage forState:UIControlStateNormal];
+
     
 
     [FreeVideos addTarget:self action:@selector(ViewFreeVideos:) forControlEvents:UIControlEventTouchUpInside];
@@ -57,11 +68,11 @@
     
     
     BtnTransfermysubscription = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [BtnTransfermysubscription setTitle:@"Transfer my subscription to this device" forState:UIControlStateNormal];
-    [BtnTransfermysubscription setTitleColor:[UIColor redColor] forState: UIControlStateNormal];
-    BtnTransfermysubscription.frame = CGRectMake(400,700, 300, 44);
-   // UIImage *BtnTransfermysubscriptionbuttonImage = [UIImage imageNamed:@"blueBackground.png"];
-    //[BtnTransfermysubscription setBackgroundImage:BtnTransfermysubscriptionbuttonImage forState:UIControlStateNormal];
+    //[BtnTransfermysubscription setTitle:@"Transfer my subscription to this device" forState:UIControlStateNormal];
+    //[BtnTransfermysubscription setTitleColor:[UIColor redColor] forState: UIControlStateNormal];
+    BtnTransfermysubscription.frame = CGRectMake(400,695, 300, 64);
+    UIImage *BtnTransfermysubscriptionbuttonImage = [UIImage imageNamed:@"transfer.png"];
+   [BtnTransfermysubscription setBackgroundImage:BtnTransfermysubscriptionbuttonImage forState:UIControlStateNormal];
     BtnTransfermysubscription.tag = 999;
     [BtnTransfermysubscription addTarget:self action:@selector(TransferSubscription:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -69,8 +80,9 @@
     
     LoginViaLearnersCloud = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [LoginViaLearnersCloud setTitle:LoginTitle forState:UIControlStateNormal];
-    [LoginViaLearnersCloud setTitleColor:[UIColor redColor] forState: UIControlStateNormal];
-    LoginViaLearnersCloud.frame = CGRectMake(60 ,700, 300, 44);
+    [LoginViaLearnersCloud setBackgroundColor:[UIColor blueColor]];
+    [LoginViaLearnersCloud  setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    LoginViaLearnersCloud.frame = CGRectMake(60 ,700, 300, 54);
     LoginViaLearnersCloud.tag = 101010;
     
     

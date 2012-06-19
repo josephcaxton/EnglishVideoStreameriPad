@@ -25,10 +25,17 @@ static NSString* const kAnalyticsAccountId = @"UA-32471393-1";
 
 @synthesize window;
 @synthesize tabBarController;
-@synthesize SecondThread,SelectProductID,buyScreen,DomainName,SubscriptionStatusData,TempSubscibedProducts,PassageFlag,UserEmail,EmailFlag,AccessAll;
+@synthesize SecondThread,SelectProductID,buyScreen,DomainName,SubscriptionStatusData,TempSubscibedProducts,PassageFlag,UserEmail,EmailFlag,AccessAll,m_facebook;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    //For testing
+    
+    //NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    //[prefs setObject:@"0" forKey:@"AddOneFreeEnglish"];
+    //[prefs synchronize];
+
     //Remove useless tabbarItems ..
     NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:tabBarController.viewControllers];
     [viewControllers removeObjectAtIndex:1];
@@ -513,5 +520,17 @@ static NSString* const kAnalyticsAccountId = @"UA-32471393-1";
  {
  }
  */
+
+// Pre iOS 4.2 support
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [m_facebook handleOpenURL:url]; 
+}
+
+// For iOS 4.2+ support
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [m_facebook handleOpenURL:url]; 
+}
+
 
 @end

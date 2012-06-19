@@ -16,7 +16,7 @@
 @implementation FreeVideosClass
 
 
-@synthesize ArrayofConfigObjects,ProductIDs,ImageObjects,ProductsSubscibedTo,FullSubscription;
+@synthesize ArrayofConfigObjects,ProductIDs,ImageObjects,ProductsSubscibedTo,FullSubscription,popover;
 
 
 
@@ -35,9 +35,45 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
       //NSLog(@"Subscibed products= %@", appDelegate.SubscibedProducts);
     
+    // create a toolbar where we can place some buttons
+    UIToolbar* toolbar = [[UIToolbar alloc]
+                          initWithFrame:CGRectMake(0, 0, 210, 45)];
+    [toolbar setBarStyle: UIBarStyleBlack];
     
+    
+    // create an array for the buttons
+    NSMutableArray* buttons = [[NSMutableArray alloc] initWithCapacity:3];
+    
+    //create Report Problem Button
     UIBarButtonItem *SendSupportMail = [[UIBarButtonItem alloc] initWithTitle:@"Report Problem" style: UIBarButtonItemStyleBordered target:self action:@selector(ReportProblem:)];
-    self.navigationItem.rightBarButtonItem = SendSupportMail;
+    //self.navigationItem.rightBarButtonItem = SendSupportMail;
+    
+     [buttons addObject:SendSupportMail];
+    
+    // create a spacer between the buttons
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc]
+                               initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                               target:nil
+                               action:nil];
+    [buttons addObject:spacer];
+    
+    // Create Share image button
+    UIImage *ShareImage = [UIImage imageNamed:@"shareIcon.png"];
+    UIButton *face = [UIButton buttonWithType:UIButtonTypeCustom];
+    face.bounds = CGRectMake( 0, 0, ShareImage.size.width, ShareImage.size.height );
+    [face setImage:ShareImage forState:UIControlStateNormal];
+    [face addTarget:self action:@selector(share:)forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *ShareButton = [[UIBarButtonItem alloc] initWithCustomView:face];
+    
+     [buttons addObject:ShareButton];
+    
+    // put the buttons in the toolbar
+    [toolbar setItems:buttons animated:NO];
+    
+    // place the toolbar into the navigation bar
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithCustomView:toolbar];
     
     // Get Subscibed products from delegate
     /*if([appDelegate.SubscibedProducts count] > 0){
@@ -255,7 +291,7 @@
 		NSString *Free = [[NSString alloc] initWithFormat:@"%@", [arr objectAtIndex:5]];
 		NSString *Subject = [[NSString alloc] initWithFormat:@"%@",[arr objectAtIndex:7]];
 		NSString *M3u8 = [[NSString alloc] initWithFormat:@"%@",[arr objectAtIndex:9]];
-		NSString *ThumbNail = [[NSString alloc] initWithFormat:@"%@",[arr objectAtIndex:11]];
+		NSString *Sociallyfree = [[NSString alloc] initWithFormat:@"%@",[arr objectAtIndex:11]];
         NSString *ProductID = [[NSString alloc] initWithFormat:@"%@",[arr objectAtIndex:13]];
 		
          //if ([Show isEqualToString: @"1"]){
@@ -272,7 +308,17 @@
         }
         obj.Subject = Subject;
         obj.M3u8 = M3u8;
-        obj.Thumbnail = ThumbNail;
+        
+        if ([Sociallyfree isEqualToString: @"1"]){
+            
+            obj.SociallyFree = YES;
+        }
+        else
+        {
+            obj.SociallyFree = NO; 
+        }
+
+        
         obj.ProductID = ProductID;
         //NSLog(@"Product is: %@",obj.ProductID);
         for (int i = 0; i < ProductsSubscibedTo.count; i++) {
@@ -342,6 +388,18 @@
          cell.detailTextLabel.textColor = [UIColor blueColor];
         
     }
+    
+    else if ([obj SociallyFree] == YES){
+        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        NSString* descriptiontxt = [obj VideoDescription];
+        NSString* FullDesciption = [descriptiontxt stringByAppendingString:@" - Free gift if you share"];
+        cell.detailTextLabel.text =FullDesciption;
+        cell.detailTextLabel.textColor = [UIColor blueColor];
+        
+        
+    }
+
     // Is user Subscribed?
     else if([obj Subcribed] == YES || FullSubscription == TRUE){
         
@@ -389,6 +447,34 @@
     VP1.VideoFileName =[NSString stringWithString:[obj M3u8]];
     [self.navigationController pushViewController:VP1 animated:YES];
     }
+    
+    else if ([obj SociallyFree] == YES){
+        // Have you shared if so view video
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        if([[prefs objectForKey:@"AddOneFreeEnglish"] isEqualToString:@"1"]){
+            
+            VideoPlayer *VP1 = [[VideoPlayer alloc] initWithNibName:nil bundle:nil];
+            VP1.VideoFileName =[NSString stringWithString:[obj M3u8]];
+            [self.navigationController pushViewController:VP1 animated:YES];
+            
+        }
+        
+        else {
+            
+            UIAlertView *alertView = [[UIAlertView alloc] 
+                                      initWithTitle:@"Sorry"                                                             
+                                      message:@"You can only view this video for free if you share"                                                          
+                                      delegate:self                                              
+                                      cancelButtonTitle:@"OK"                                                   
+                                      otherButtonTitles:nil];
+            [alertView show];
+            
+            return;
+            
+        }
+        
+    }
+
     else{
         // To store for buying
         //NSLog(@"my product id is %@",[obj ProductID]);
@@ -460,7 +546,7 @@
         [SendMailcontroller setToRecipients:SendTo];
         [SendMailcontroller setSubject:[NSString stringWithFormat:@"%@ English video streaming iPad",DeviceID]];
         
-        [SendMailcontroller setMessageBody:[NSString stringWithFormat:@"Additional Messages can be added to this email "] isHTML:NO];
+        [SendMailcontroller setMessageBody:[NSString stringWithFormat:@"Add message here "] isHTML:NO];
         [self presentModalViewController:SendMailcontroller animated:YES];
         
 		
@@ -491,6 +577,32 @@
 	
 	
 	
+}
+
+- (IBAction)share:(id)sender{
+    UIButton *button = (UIButton*)sender;
+    
+    PopUpTableviewViewController *tableViewController = [[PopUpTableviewViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    
+    popover = [[UIPopoverController alloc] initWithContentViewController:tableViewController];
+    tableViewController.m_popover = popover;
+    [popover setPopoverContentSize:CGSizeMake(420, 320) animated:YES];
+    
+    [popover presentPopoverFromRect:CGRectMake(button.frame.size.width / 2, button.frame.size.height / 1, 1, 1) inView:button permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    
+    
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{
+    
+    if(popover){
+        
+        [popover dismissPopoverAnimated:YES];
+        [popover.delegate popoverControllerDidDismissPopover:self.popover];
+        
+    }
+    
 }
 
 

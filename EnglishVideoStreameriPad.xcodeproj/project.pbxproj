@@ -41,7 +41,6 @@
 		7CAC57121580A9E100D6C840 /* LearnersCloudLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC57111580A9E100D6C840 /* LearnersCloudLogo.png */; };
 		7CAC57141580A9FC00D6C840 /* buynow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC57131580A9FC00D6C840 /* buynow.jpeg */; };
 		7CAC57351580AB8800D6C840 /* LearnersCloudTermsonapps.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC57331580AB8800D6C840 /* LearnersCloudTermsonapps.pdf */; };
-		7CAC57361580AB8800D6C840 /* HowtouseVideoStreamer.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CAC57341580AB8800D6C840 /* HowtouseVideoStreamer.pdf */; };
 		7CAC573A1580ABAF00D6C840 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CAC57391580ABAF00D6C840 /* libGoogleAnalytics.a */; };
 		7CAC573B1580B47700D6C840 /* Start.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAC57191580AA8800D6C840 /* Start.m */; };
 		7CAC573C1580B48200D6C840 /* FreeVideosClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAC571B1580AA9800D6C840 /* FreeVideosClass.m */; };
@@ -119,6 +118,19 @@
 		7CC559F61580C3C2003ECCA0 /* 59.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC559D81580C3C1003ECCA0 /* 59.png */; };
 		7CC559F71580C3C2003ECCA0 /* 60.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC559D91580C3C1003ECCA0 /* 60.png */; };
 		7CC559FD1580E429003ECCA0 /* EnglishBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC559FC1580E429003ECCA0 /* EnglishBackground.png */; };
+		7CFA6EDE1590796D00EE44A1 /* starthere.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6EDD1590796D00EE44A1 /* starthere.png */; };
+		7CFA6EE11590797C00EE44A1 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6EE01590797C00EE44A1 /* login.png */; };
+		7CFA6EE31590798D00EE44A1 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6EE21590798D00EE44A1 /* mail.png */; };
+		7CFA6EE51590799D00EE44A1 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6EE41590799D00EE44A1 /* facebook.png */; };
+		7CFA6EE7159079AE00EE44A1 /* transfer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6EE6159079AE00EE44A1 /* transfer.png */; };
+		7CFA6EE9159079BD00EE44A1 /* logoutfacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6EE8159079BD00EE44A1 /* logoutfacebook.png */; };
+		7CFA6EEB159079CD00EE44A1 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6EEA159079CD00EE44A1 /* twitter.png */; };
+		7CFA6EFC1590800C00EE44A1 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6EEF1590800C00EE44A1 /* FBDialog.bundle */; };
+		7CFA6EFD1590800C00EE44A1 /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFA6EF51590800C00EE44A1 /* libfacebook_ios_sdk.a */; };
+		7CFA6EFF159083D500EE44A1 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFA6EFE159083D500EE44A1 /* Twitter.framework */; };
+		7CFA6F031590880E00EE44A1 /* HowtouseVideoStreamer.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6F021590880E00EE44A1 /* HowtouseVideoStreamer.pdf */; };
+		7CFA6F0915908F7E00EE44A1 /* PopUpTableviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFA6F011590847500EE44A1 /* PopUpTableviewViewController.m */; };
+		7CFA6F0B1590902100EE44A1 /* shareIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6F0A1590902100EE44A1 /* shareIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,7 +202,6 @@
 		7CAC57301580AB6000D6C840 /* ConfigObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigObject.h; sourceTree = "<group>"; };
 		7CAC57311580AB6000D6C840 /* ConfigObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigObject.m; sourceTree = "<group>"; };
 		7CAC57331580AB8800D6C840 /* LearnersCloudTermsonapps.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = LearnersCloudTermsonapps.pdf; sourceTree = "<group>"; };
-		7CAC57341580AB8800D6C840 /* HowtouseVideoStreamer.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HowtouseVideoStreamer.pdf; sourceTree = "<group>"; };
 		7CAC57381580ABA300D6C840 /* GANTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GANTracker.h; sourceTree = "<group>"; };
 		7CAC57391580ABAF00D6C840 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		7CC5596C1580BFEA003ECCA0 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -254,6 +265,33 @@
 		7CC559D81580C3C1003ECCA0 /* 59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 59.png; sourceTree = "<group>"; };
 		7CC559D91580C3C1003ECCA0 /* 60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 60.png; sourceTree = "<group>"; };
 		7CC559FC1580E429003ECCA0 /* EnglishBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EnglishBackground.png; sourceTree = "<group>"; };
+		7CFA6EDD1590796D00EE44A1 /* starthere.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starthere.png; sourceTree = "<group>"; };
+		7CFA6EE01590797C00EE44A1 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		7CFA6EE21590798D00EE44A1 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
+		7CFA6EE41590799D00EE44A1 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		7CFA6EE6159079AE00EE44A1 /* transfer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer.png; sourceTree = "<group>"; };
+		7CFA6EE8159079BD00EE44A1 /* logoutfacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoutfacebook.png; sourceTree = "<group>"; };
+		7CFA6EEA159079CD00EE44A1 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		7CFA6EED1590800C00EE44A1 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
+		7CFA6EEE1590800C00EE44A1 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
+		7CFA6EEF1590800C00EE44A1 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
+		7CFA6EF01590800C00EE44A1 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
+		7CFA6EF11590800C00EE44A1 /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
+		7CFA6EF21590800C00EE44A1 /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
+		7CFA6EF31590800C00EE44A1 /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
+		7CFA6EF41590800C00EE44A1 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		7CFA6EF51590800C00EE44A1 /* libfacebook_ios_sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfacebook_ios_sdk.a; sourceTree = "<group>"; };
+		7CFA6EF61590800C00EE44A1 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		7CFA6EF71590800C00EE44A1 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		7CFA6EF81590800C00EE44A1 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		7CFA6EF91590800C00EE44A1 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		7CFA6EFA1590800C00EE44A1 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		7CFA6EFB1590800C00EE44A1 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		7CFA6EFE159083D500EE44A1 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		7CFA6F001590847500EE44A1 /* PopUpTableviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopUpTableviewViewController.h; sourceTree = "<group>"; };
+		7CFA6F011590847500EE44A1 /* PopUpTableviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopUpTableviewViewController.m; sourceTree = "<group>"; };
+		7CFA6F021590880E00EE44A1 /* HowtouseVideoStreamer.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HowtouseVideoStreamer.pdf; sourceTree = "<group>"; };
+		7CFA6F0A1590902100EE44A1 /* shareIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shareIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +299,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CFA6EFF159083D500EE44A1 /* Twitter.framework in Frameworks */,
 				7C288EB4157CDC2800D0C411 /* SystemConfiguration.framework in Frameworks */,
 				7C288EB2157CDC1D00D0C411 /* MediaPlayer.framework in Frameworks */,
 				7C288EB0157CDC1400D0C411 /* StoreKit.framework in Frameworks */,
@@ -271,6 +310,7 @@
 				7C288E64157CD84200D0C411 /* Foundation.framework in Frameworks */,
 				7C288E66157CD84200D0C411 /* CoreGraphics.framework in Frameworks */,
 				7CAC573A1580ABAF00D6C840 /* libGoogleAnalytics.a in Frameworks */,
+				7CFA6EFD1590800C00EE44A1 /* libfacebook_ios_sdk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +320,7 @@
 		7C288E52157CD84100D0C411 = {
 			isa = PBXGroup;
 			children = (
+				7CFA6EEC1590800C00EE44A1 /* facebook-ios-sdk */,
 				7CAC57371580AB9500D6C840 /* Analytics */,
 				7CAC57321580AB7A00D6C840 /* VideoImages */,
 				7CAC572F1580AB5100D6C840 /* Data Models */,
@@ -308,6 +349,7 @@
 				7C288EA7157CDBD800D0C411 /* Reachability.h */,
 				7C288EA8157CDBD800D0C411 /* Reachability.m */,
 				7C288EA9157CDBF300D0C411 /* libsqlite3.dylib */,
+				7CFA6EFE159083D500EE44A1 /* Twitter.framework */,
 				7C288EB3157CDC2800D0C411 /* SystemConfiguration.framework */,
 				7C288EB1157CDC1D00D0C411 /* MediaPlayer.framework */,
 				7C288EAF157CDC1400D0C411 /* StoreKit.framework */,
@@ -354,6 +396,14 @@
 				7C288E9F157CDA1E00D0C411 /* Icon.png */,
 				7C288EA0157CDA1E00D0C411 /* Icon@2x.png */,
 				7C288EA1157CDA1E00D0C411 /* iTunesArtwork.png */,
+				7CFA6EDD1590796D00EE44A1 /* starthere.png */,
+				7CFA6EE01590797C00EE44A1 /* login.png */,
+				7CFA6EE21590798D00EE44A1 /* mail.png */,
+				7CFA6EE41590799D00EE44A1 /* facebook.png */,
+				7CFA6EE6159079AE00EE44A1 /* transfer.png */,
+				7CFA6EE8159079BD00EE44A1 /* logoutfacebook.png */,
+				7CFA6EEA159079CD00EE44A1 /* twitter.png */,
+				7CFA6F0A1590902100EE44A1 /* shareIcon.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -420,6 +470,8 @@
 				7CAC572C1580AB3100D6C840 /* TermsAndConditions.m */,
 				7CAC572D1580AB4100D6C840 /* HowtoUse.h */,
 				7CAC572E1580AB4100D6C840 /* HowtoUse.m */,
+				7CFA6F001590847500EE44A1 /* PopUpTableviewViewController.h */,
+				7CFA6F011590847500EE44A1 /* PopUpTableviewViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -497,7 +549,7 @@
 				7CC559D81580C3C1003ECCA0 /* 59.png */,
 				7CC559D91580C3C1003ECCA0 /* 60.png */,
 				7CAC57331580AB8800D6C840 /* LearnersCloudTermsonapps.pdf */,
-				7CAC57341580AB8800D6C840 /* HowtouseVideoStreamer.pdf */,
+				7CFA6F021590880E00EE44A1 /* HowtouseVideoStreamer.pdf */,
 			);
 			name = VideoImages;
 			sourceTree = "<group>";
@@ -509,6 +561,28 @@
 				7CAC57391580ABAF00D6C840 /* libGoogleAnalytics.a */,
 			);
 			name = Analytics;
+			sourceTree = "<group>";
+		};
+		7CFA6EEC1590800C00EE44A1 /* facebook-ios-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				7CFA6EED1590800C00EE44A1 /* Facebook.h */,
+				7CFA6EEE1590800C00EE44A1 /* FBConnect.h */,
+				7CFA6EEF1590800C00EE44A1 /* FBDialog.bundle */,
+				7CFA6EF01590800C00EE44A1 /* FBDialog.h */,
+				7CFA6EF11590800C00EE44A1 /* FBFrictionlessRequestSettings.h */,
+				7CFA6EF21590800C00EE44A1 /* FBLoginDialog.h */,
+				7CFA6EF31590800C00EE44A1 /* FBRequest.h */,
+				7CFA6EF41590800C00EE44A1 /* JSON.h */,
+				7CFA6EF51590800C00EE44A1 /* libfacebook_ios_sdk.a */,
+				7CFA6EF61590800C00EE44A1 /* NSObject+SBJSON.h */,
+				7CFA6EF71590800C00EE44A1 /* NSString+SBJSON.h */,
+				7CFA6EF81590800C00EE44A1 /* SBJSON.h */,
+				7CFA6EF91590800C00EE44A1 /* SBJsonBase.h */,
+				7CFA6EFA1590800C00EE44A1 /* SBJsonParser.h */,
+				7CFA6EFB1590800C00EE44A1 /* SBJsonWriter.h */,
+			);
+			path = "facebook-ios-sdk";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -585,7 +659,6 @@
 				7CAC57121580A9E100D6C840 /* LearnersCloudLogo.png in Resources */,
 				7CAC57141580A9FC00D6C840 /* buynow.jpeg in Resources */,
 				7CAC57351580AB8800D6C840 /* LearnersCloudTermsonapps.pdf in Resources */,
-				7CAC57361580AB8800D6C840 /* HowtouseVideoStreamer.pdf in Resources */,
 				7CC5598A1580BFEA003ECCA0 /* 1.png in Resources */,
 				7CC5598B1580BFEA003ECCA0 /* 2.png in Resources */,
 				7CC5598C1580BFEA003ECCA0 /* 3.png in Resources */,
@@ -647,6 +720,16 @@
 				7CC559F61580C3C2003ECCA0 /* 59.png in Resources */,
 				7CC559F71580C3C2003ECCA0 /* 60.png in Resources */,
 				7CC559FD1580E429003ECCA0 /* EnglishBackground.png in Resources */,
+				7CFA6EDE1590796D00EE44A1 /* starthere.png in Resources */,
+				7CFA6EE11590797C00EE44A1 /* login.png in Resources */,
+				7CFA6EE31590798D00EE44A1 /* mail.png in Resources */,
+				7CFA6EE51590799D00EE44A1 /* facebook.png in Resources */,
+				7CFA6EE7159079AE00EE44A1 /* transfer.png in Resources */,
+				7CFA6EE9159079BD00EE44A1 /* logoutfacebook.png in Resources */,
+				7CFA6EEB159079CD00EE44A1 /* twitter.png in Resources */,
+				7CFA6EFC1590800C00EE44A1 /* FBDialog.bundle in Resources */,
+				7CFA6F031590880E00EE44A1 /* HowtouseVideoStreamer.pdf in Resources */,
+				7CFA6F0B1590902100EE44A1 /* shareIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +740,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CFA6F0915908F7E00EE44A1 /* PopUpTableviewViewController.m in Sources */,
 				7CAC57411580B4AD00D6C840 /* Reachability.m in Sources */,
 				7C288E6E157CD84200D0C411 /* main.m in Sources */,
 				7C288E72157CD84200D0C411 /* AppDelegate.m in Sources */,
@@ -711,7 +795,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "English Videos";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -731,7 +815,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "English Videos";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "308F2E96-E491-49D8-9593-82341110AC79";
@@ -750,6 +834,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/facebook-ios-sdk\"",
 				);
 				PRODUCT_NAME = "English Videos";
 				WRAPPER_EXTENSION = app;
@@ -765,6 +850,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/facebook-ios-sdk\"",
 				);
 				PRODUCT_NAME = "English Videos";
 				WRAPPER_EXTENSION = app;

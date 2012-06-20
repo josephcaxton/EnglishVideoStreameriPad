@@ -14,7 +14,7 @@
 
 @implementation PopUpTableviewViewController
 
-@synthesize m_popover,facebook,logoutFacebook;
+@synthesize m_popover,facebook,logoutFacebook,activityIndicator;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,11 +29,12 @@
 {
     [super viewDidLoad];
 
-    //listofItems = [[NSMutableArray alloc] init];
-	
-	// Add items to the array this is hardcoded for now .. may need to be migrated to the database
-    //[listofItems addObject:@"Email to a friend"];
-    //[listofItems addObject:@"Terms and Conditions"];
+    NSError *error;
+    // Report to  analytics
+    if (![[GANTracker sharedTracker] trackPageview:@"/SocialMediaPage"
+                                         withError:&error]) {
+        NSLog(@"error in trackPageview");
+    }
 
 }
 
@@ -236,6 +237,17 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
    
     if(MFMailComposeResultSent){
 	
+        NSError *error;
+        // Report to  analytics
+        if (![[GANTracker sharedTracker] trackEvent:@"Shared via email"
+                                             action:@"Email shared"
+                                              label:@"Email shared"
+                                              value:69
+                                          withError:&error]) {
+            NSLog(@"error in trackEvent");
+        }
+
+        
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
          // Give user one free video.
             if(![prefs objectForKey:@"AddOneFreeEnglish"]){
@@ -344,6 +356,17 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
 }
 
 - (void)dialogDidComplete:(FBDialog *)dialog {
+    
+    NSError *error;
+    // Report to  analytics
+    if (![[GANTracker sharedTracker] trackEvent:@"Shared via facebook"
+                                         action:@"Facebook shared"
+                                          label:@"Facebook shared"
+                                          value:69
+                                      withError:&error]) {
+        NSLog(@"error in trackEvent");
+    }
+
    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     // Give user one free video.
@@ -370,7 +393,9 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
 
 -(void)Twit {
     
-
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    appDelegate.SecondThread = [[NSThread alloc]initWithTarget:self selector:@selector(AddProgress) object:nil];
+    [appDelegate.SecondThread start];
     
     if ([TWTweetComposeViewController canSendTweet])
     {
@@ -383,13 +408,23 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
         
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
         
-        tweetSheet.completionHandler = ^(TWTweetComposeViewControllerResult result) { 
+        tweetSheet.completionHandler = ^(TWTweetComposeViewControllerResult result) {
+             NSError *error;
             switch (result) {
                 case TWTweetComposeViewControllerResultCancelled:                    
                     break;
                     
                 case TWTweetComposeViewControllerResultDone:
                     
+                    // Report to  analytics
+                    if (![[GANTracker sharedTracker] trackEvent:@"Shared via twitter"
+                                                         action:@"twitter shared"
+                                                          label:@"twitter shared"
+                                                          value:69
+                                                      withError:&error]) {
+                        NSLog(@"error in trackEvent");
+                    }
+
                     
                     // Give user one free video.
                     if(![prefs objectForKey:@"AddOneFreeEnglish"]){
@@ -409,12 +444,13 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
         };
 
         
-        
+         [activityIndicator stopAnimating];
         
 	    [self presentModalViewController:tweetSheet animated:YES];
     }
     else
     {
+        [activityIndicator stopAnimating];
         UIAlertView *alertView = [[UIAlertView alloc] 
                                   initWithTitle:@"Sorry"                                                             
                                   message:@"You can't send a tweet right now, make sure  your device has an internet connection and you have at least one Twitter account setup"                                                          
@@ -424,6 +460,23 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
         [alertView show];
     }
     
+}
+
+- (void)AddProgress{
+	
+    @autoreleasepool {
+        
+        
+        activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [activityIndicator stopAnimating];
+        [activityIndicator hidesWhenStopped];
+        activityIndicator.center = CGPointMake(360, 180);
+        
+        [self.view addSubview:activityIndicator];
+        [activityIndicator startAnimating];
+        
+    }
+	
 }
 
 

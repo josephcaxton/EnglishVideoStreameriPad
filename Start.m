@@ -55,7 +55,7 @@
    
     FreeVideos = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     //[FreeVideos setTitle:@"Start here to view free and subscription videos!" forState:UIControlStateNormal];
-    FreeVideos.frame = CGRectMake(85 ,100, 600, 44);
+    FreeVideos.frame = CGRectMake(85 ,100, 600, 64);
     UIImage *FreeVideosbuttonImage = [UIImage imageNamed:@"starthere.png"];
     [FreeVideos setBackgroundImage:FreeVideosbuttonImage forState:UIControlStateNormal];
 
@@ -574,7 +574,7 @@
     @autoreleasepool {
 
 	
-	UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+	UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
 	[activityIndicator stopAnimating];
     [activityIndicator hidesWhenStopped];
 	UIBarButtonItem * barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
@@ -601,20 +601,20 @@
     
     if (interfaceOrientation == UIInterfaceOrientationPortrait  || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
         
-        FreeVideos.frame = CGRectMake(85,100, 600, 44);
-        BtnTransfermysubscription.frame = CGRectMake(400,700, 300, 44);
+        FreeVideos.frame = CGRectMake(85,100, 600, 64);
+        BtnTransfermysubscription.frame = CGRectMake(400,695, 300, 64);
         ImageView.frame = CGRectMake(60,200, 640, 480);
         FirstView.frame = CGRectMake(0, 0,SCREEN_WIDTH, SCREEN_HEIGHT);
-        LoginViaLearnersCloud.frame = CGRectMake(60 ,700, 300, 44);
+        LoginViaLearnersCloud.frame = CGRectMake(60 ,700, 300, 54);
         
     }
     else
     {
-        FreeVideos.frame = CGRectMake(220,15, 600, 44);
-        BtnTransfermysubscription.frame = CGRectMake(540 ,600, 300, 44);
+        FreeVideos.frame = CGRectMake(220,15, 600, 64);
+        BtnTransfermysubscription.frame = CGRectMake(540 ,590, 300, 64);
         ImageView.frame = CGRectMake(200,90, 640, 480);
         FirstView.frame = CGRectMake(0, 0, SCREEN_HEIGHT + 80 , SCREEN_WIDTH);
-        LoginViaLearnersCloud.frame = CGRectMake(200 ,600, 300, 44);
+        LoginViaLearnersCloud.frame = CGRectMake(200 ,595, 300, 54);
         
     }
     

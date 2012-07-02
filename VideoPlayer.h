@@ -18,7 +18,7 @@
     NSURLProtectionSpace *protectionSpace;
     NSString *domain;
     UIImageView *ImageViewer1;
-    
+    FreeVideosClass *FreeView;
 	
 }
 @property (nonatomic, retain) NSString *VideoFileName;
@@ -28,5 +28,7 @@
 @property (nonatomic, retain) NSString *domain;
 @property (nonatomic, retain) UIImageView *ImageViewer1;
 @property (nonatomic, retain) MPMoviePlayerViewController *moviePlayerViewController;
+@property (nonatomic, retain) FreeVideosClass *FreeView;
+
 
 @end

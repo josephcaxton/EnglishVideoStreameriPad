@@ -81,7 +81,7 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
     }
     else if (section == 2){
         
-        return 2;
+        return 3;
     }
     
     else {
@@ -198,6 +198,15 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
         cell.imageView.image = FollowUsOnTwitterImage;
         cell.textLabel.text = @"Follow us on Twitter";
     }
+    
+    else if(indexPath.section == 2 && indexPath.row == 2){
+        
+        UIImage* LikeUsImage = [UIImage imageNamed:@"LikeUsOnFaceBook.png"];
+        cell.imageView.image = LikeUsImage;
+        cell.textLabel.text = @"Like us on Facebook";
+        
+    }
+
 	
 
 	
@@ -231,9 +240,13 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
         [self Twit];
     }
     
-    else if (indexPath.section == 2){
+    else if (indexPath.section == 2 && indexPath.row < 2){
         
         [self FollowUsOnTwitter];
+    }
+    else if (indexPath.section == 2 && indexPath.row == 2){
+        
+        [self LikeUsOnFaceBook];
     }
 
      
@@ -535,6 +548,24 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
     
     
     NSString *str = @"http://twitter.com/#!/learnerscloud"; 
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    
+}
+
+-(void)LikeUsOnFaceBook{
+    
+    // Report to  analytics
+    NSError *error;
+    if (![[GANTracker sharedTracker] trackEvent:@"User likes us on Facebook"
+                                         action:@"User likes us on Facebook"
+                                          label:@"User likes us on Facebook"
+                                          value:1
+                                      withError:&error]) {
+        NSLog(@"error in trackEvent");
+    }
+    
+    
+    NSString *str = @"http://www.facebook.com/LearnersCloud"; 
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
     
 }

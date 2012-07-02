@@ -118,6 +118,7 @@
 		7CC559F61580C3C2003ECCA0 /* 59.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC559D81580C3C1003ECCA0 /* 59.png */; };
 		7CC559F71580C3C2003ECCA0 /* 60.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC559D91580C3C1003ECCA0 /* 60.png */; };
 		7CC559FD1580E429003ECCA0 /* EnglishBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC559FC1580E429003ECCA0 /* EnglishBackground.png */; };
+		7CD3E6A415A1C428009F527C /* FollowUsOnTwitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD3E6A315A1C428009F527C /* FollowUsOnTwitter.png */; };
 		7CFA6EDE1590796D00EE44A1 /* starthere.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6EDD1590796D00EE44A1 /* starthere.png */; };
 		7CFA6EE11590797C00EE44A1 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6EE01590797C00EE44A1 /* login.png */; };
 		7CFA6EE31590798D00EE44A1 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6EE21590798D00EE44A1 /* mail.png */; };
@@ -265,6 +266,7 @@
 		7CC559D81580C3C1003ECCA0 /* 59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 59.png; sourceTree = "<group>"; };
 		7CC559D91580C3C1003ECCA0 /* 60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 60.png; sourceTree = "<group>"; };
 		7CC559FC1580E429003ECCA0 /* EnglishBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EnglishBackground.png; sourceTree = "<group>"; };
+		7CD3E6A315A1C428009F527C /* FollowUsOnTwitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FollowUsOnTwitter.png; sourceTree = "<group>"; };
 		7CFA6EDD1590796D00EE44A1 /* starthere.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starthere.png; sourceTree = "<group>"; };
 		7CFA6EE01590797C00EE44A1 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		7CFA6EE21590798D00EE44A1 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 				7CFA6EE6159079AE00EE44A1 /* transfer.png */,
 				7CFA6EE8159079BD00EE44A1 /* logoutfacebook.png */,
 				7CFA6EEA159079CD00EE44A1 /* twitter.png */,
+				7CD3E6A315A1C428009F527C /* FollowUsOnTwitter.png */,
 				7CFA6F0A1590902100EE44A1 /* shareIcon.png */,
 			);
 			name = Resources;
@@ -730,6 +733,7 @@
 				7CFA6EFC1590800C00EE44A1 /* FBDialog.bundle in Resources */,
 				7CFA6F031590880E00EE44A1 /* HowtouseVideoStreamer.pdf in Resources */,
 				7CFA6F0B1590902100EE44A1 /* shareIcon.png in Resources */,
+				7CD3E6A415A1C428009F527C /* FollowUsOnTwitter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

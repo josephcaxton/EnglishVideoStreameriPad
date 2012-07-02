@@ -628,9 +628,9 @@
     
     // Report to  analytics
     NSError *error;
-    if (![[GANTracker sharedTracker] trackEvent:@"User Sent to Review at app store"
-                                         action:@"User Sent to Review at app store"
-                                          label:@"User Sent to Review at app store"
+    if (![[GANTracker sharedTracker] trackEvent:@"User Sent to Review English Videos iPad at app store"
+                                         action:@"User Sent to Review English Videos iPad at app store"
+                                          label:@"User Sent to Review English Videos iPad at app store"
                                           value:1
                                       withError:&error]) {
         NSLog(@"error in trackEvent");

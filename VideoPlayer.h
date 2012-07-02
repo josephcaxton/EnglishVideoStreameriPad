@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MediaPlayer/MediaPlayer.h> 
+#import <MediaPlayer/MediaPlayer.h>
+#import "FreeVideosClass.h"
 
 @interface VideoPlayer : UIViewController {
 

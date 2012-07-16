@@ -476,7 +476,7 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
                     if (![[GANTracker sharedTracker] trackEvent:@"Shared via twitter"
                                                          action:@"twitter shared"
                                                           label:@"twitter shared"
-                                                          value:69
+                                                          value:1
                                                       withError:&error]) {
                         NSLog(@"error in trackEvent");
                     }

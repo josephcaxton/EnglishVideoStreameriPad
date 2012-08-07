@@ -12,7 +12,7 @@
 
 @implementation CustomStoreObserver
 
-@synthesize AlertTitle,EmailAddress,Password,MyDeviceId,ProductID,FinalProductID,SubscriptionInDays,TransactionID,EncodedReceipt,textField;
+@synthesize AlertTitle,EmailAddress,Password,MyDeviceId,ProductID,FinalProductID,SubscriptionInDays,TransactionID,EncodedReceipt,VerificationAppID,textField;
 
 - (id) init
 
@@ -137,14 +137,13 @@
     EncodedReceipt =[TempReceipt stringByReplacingOccurrencesOfString:@"=" withString:@""];
     //EncodedReceipt = [TempReceipt substringWithRange:NSMakeRange(0, [TempReceipt length]-1)];
     //NSLog(@"%@",EncodedReceipt);
-    
-    if(appDelegate.UserEmail == nil){
+    //NSLog(@"%@",appDelegate.DoesUserHaveEmail);
+    if(appDelegate.DoesUserHaveEmail == FALSE){
 
-    [self AskForUserEmailAndPassword];
-    
+        [self AskForUserEmailAndPassword];
+       
     }
     else {
-        
         [self SendToLearnersCloud];
     
     }
@@ -413,8 +412,9 @@
     
     NSURL *url = [NSURL URLWithString:queryString];
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
+    VerificationAppID = [[NSString alloc] initWithString:@"3"]; //English iPad
     
-        NSString *FullString = [NSString stringWithFormat:@"productIdentifier=%@&DeviceID=%@&days=%@&transactionIdentifier=%@&B64receipt=%@&email=%@&password=%@",FinalProductID,MyDeviceId,SubscriptionInDays,TransactionID,EncodedReceipt,EmailAddress,Password];
+        NSString *FullString = [NSString stringWithFormat:@"productIdentifier=%@&DeviceID=%@&days=%@&transactionIdentifier=%@&B64receipt=%@&email=%@&password=%@&AppID=%@",FinalProductID,MyDeviceId,SubscriptionInDays,TransactionID,EncodedReceipt,EmailAddress,Password,VerificationAppID];
         
         /*NSString * encodedString = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(
                                                                                        NULL,

@@ -20,7 +20,9 @@
     NSMutableData *SubscriptionStatusData;
     //NSMutableArray *SubscibedProducts;
     BOOL PassageFlag;
+    BOOL EmailFlag;
     NSString *UserEmail;
+    BOOL DoesUserHaveEmail;
     BOOL AccessAll;
     
     // this is to handle return from facebook
@@ -38,7 +40,9 @@
 @property (nonatomic, retain)  NSMutableData *SubscriptionStatusData;
 //@property (nonatomic, retain) NSMutableArray *SubscibedProducts;
 @property (nonatomic, assign) BOOL PassageFlag;
+@property (nonatomic, assign) BOOL EmailFlag;
 @property (nonatomic, retain) NSString *UserEmail;
+@property (nonatomic, assign) BOOL DoesUserHaveEmail;
 @property (nonatomic, assign) BOOL AccessAll;
 @property (nonatomic, retain)  Facebook *m_facebook;
 

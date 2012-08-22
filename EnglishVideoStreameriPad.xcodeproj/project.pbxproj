@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0D1F3415E51C0300999411 /* buttonbackgroud.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D1F3315E51C0300999411 /* buttonbackgroud.png */; };
 		7C1965CF15B4150900E912D7 /* 61.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1965C515B4150900E912D7 /* 61.png */; };
 		7C1965D015B4150900E912D7 /* 62.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1965C615B4150900E912D7 /* 62.png */; };
 		7C1965D115B4150900E912D7 /* 63.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1965C715B4150900E912D7 /* 63.png */; };
@@ -146,6 +147,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C0D1F3315E51C0300999411 /* buttonbackgroud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonbackgroud.png; sourceTree = "<group>"; };
 		7C1965C515B4150900E912D7 /* 61.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 61.png; sourceTree = "<group>"; };
 		7C1965C615B4150900E912D7 /* 62.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 62.png; sourceTree = "<group>"; };
 		7C1965C715B4150900E912D7 /* 63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 63.png; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				7C288E95157CD8D900D0C411 /* Default-PortraitUpsideDown.png */,
 				7CC559FC1580E429003ECCA0 /* EnglishBackground.png */,
 				7C288E9B157CD90200D0C411 /* BlackBackGround.png */,
+				7C0D1F3315E51C0300999411 /* buttonbackgroud.png */,
 				7C288E9D157CDA1E00D0C411 /* Icon-72.png */,
 				7C288E9E157CDA1E00D0C411 /* Icon-Small-50.png */,
 				7C288E9F157CDA1E00D0C411 /* Icon.png */,
@@ -778,6 +781,7 @@
 				7C1965D715B4150900E912D7 /* 69.png in Resources */,
 				7C1965D815B4150900E912D7 /* 70.png in Resources */,
 				7C1965DB15B421EF00E912D7 /* HowtouseVideoStreamer.pdf in Resources */,
+				7C0D1F3415E51C0300999411 /* buttonbackgroud.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

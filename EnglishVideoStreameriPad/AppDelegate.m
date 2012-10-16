@@ -435,7 +435,9 @@ static NSString* const kAnalyticsAccountId = @"UA-32471393-1";
      */
     
     Reachability *reachability = [Reachability reachabilityForInternetConnection];  
-    NetworkStatus networkStatus = [reachability currentReachabilityStatus]; 
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    
+    
     return !(networkStatus == NotReachable);
     
     

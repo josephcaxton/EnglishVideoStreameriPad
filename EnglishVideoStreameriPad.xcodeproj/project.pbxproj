@@ -17,6 +17,7 @@
 		7C1965D615B4150900E912D7 /* 68.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1965CC15B4150900E912D7 /* 68.png */; };
 		7C1965D715B4150900E912D7 /* 69.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1965CD15B4150900E912D7 /* 69.png */; };
 		7C1965D815B4150900E912D7 /* 70.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1965CE15B4150900E912D7 /* 70.png */; };
+		7C1E110616403E59006DF210 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1E110516403E59006DF210 /* AVFoundation.framework */; };
 		7C288E62157CD84200D0C411 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C288E61157CD84200D0C411 /* UIKit.framework */; };
 		7C288E64157CD84200D0C411 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C288E63157CD84200D0C411 /* Foundation.framework */; };
 		7C288E66157CD84200D0C411 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C288E65157CD84200D0C411 /* CoreGraphics.framework */; };
@@ -162,6 +163,7 @@
 		7C1965CC15B4150900E912D7 /* 68.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 68.png; sourceTree = "<group>"; };
 		7C1965CD15B4150900E912D7 /* 69.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 69.png; sourceTree = "<group>"; };
 		7C1965CE15B4150900E912D7 /* 70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 70.png; sourceTree = "<group>"; };
+		7C1E110516403E59006DF210 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7C288E5D157CD84200D0C411 /* English Videos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "English Videos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C288E61157CD84200D0C411 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7C288E63157CD84200D0C411 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -337,6 +339,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1E110616403E59006DF210 /* AVFoundation.framework in Frameworks */,
 				7CFA6EFF159083D500EE44A1 /* Twitter.framework in Frameworks */,
 				7C288EB4157CDC2800D0C411 /* SystemConfiguration.framework in Frameworks */,
 				7C288EB2157CDC1D00D0C411 /* MediaPlayer.framework in Frameworks */,
@@ -387,6 +390,7 @@
 				7C288EA7157CDBD800D0C411 /* Reachability.h */,
 				7C288EA8157CDBD800D0C411 /* Reachability.m */,
 				7C288EA9157CDBF300D0C411 /* libsqlite3.dylib */,
+				7C1E110516403E59006DF210 /* AVFoundation.framework */,
 				7CFA6EFE159083D500EE44A1 /* Twitter.framework */,
 				7C288EB3157CDC2800D0C411 /* SystemConfiguration.framework */,
 				7C288EB1157CDC1D00D0C411 /* MediaPlayer.framework */,

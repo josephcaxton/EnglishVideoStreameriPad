@@ -908,6 +908,7 @@
 		7C288E8A157CD84200D0C411 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EnglishVideoStreameriPad/EnglishVideoStreameriPad-Prefix.pch";
 				INFOPLIST_FILE = "EnglishVideoStreameriPad/EnglishVideoStreameriPad-Info.plist";
@@ -918,6 +919,7 @@
 					"\"$(SRCROOT)/facebook-ios-sdk\"",
 				);
 				PRODUCT_NAME = "English Videos";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -926,6 +928,7 @@
 		7C288E8B157CD84200D0C411 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EnglishVideoStreameriPad/EnglishVideoStreameriPad-Prefix.pch";
 				INFOPLIST_FILE = "EnglishVideoStreameriPad/EnglishVideoStreameriPad-Info.plist";
@@ -936,6 +939,7 @@
 					"\"$(SRCROOT)/facebook-ios-sdk\"",
 				);
 				PRODUCT_NAME = "English Videos";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};

@@ -145,6 +145,10 @@
 		7CC559F51580C3C2003ECCA0 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC559D71580C3C0003ECCA0 /* 58.png */; };
 		7CC559F61580C3C2003ECCA0 /* 59.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC559D81580C3C1003ECCA0 /* 59.png */; };
 		7CC559F71580C3C2003ECCA0 /* 60.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC559D91580C3C1003ECCA0 /* 60.png */; };
+		7CD6D94616973E2E004BCB15 /* Coverage-list-for-GCSE-English.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CD6D94516973E2E004BCB15 /* Coverage-list-for-GCSE-English.pdf */; };
+		7CD6D94C16973EB9004BCB15 /* nav_btn_coverage_deselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD6D94B16973EB9004BCB15 /* nav_btn_coverage_deselected.png */; };
+		7CD6D94D16973F07004BCB15 /* Coverage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD6D94816973E41004BCB15 /* Coverage.m */; };
+		7CD6D94E16973F07004BCB15 /* CoverageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD6D94A16973E41004BCB15 /* CoverageViewer.m */; };
 		7CFA6EFC1590800C00EE44A1 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7CFA6EEF1590800C00EE44A1 /* FBDialog.bundle */; };
 		7CFA6EFD1590800C00EE44A1 /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFA6EF51590800C00EE44A1 /* libfacebook_ios_sdk.a */; };
 		7CFA6EFF159083D500EE44A1 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFA6EFE159083D500EE44A1 /* Twitter.framework */; };
@@ -312,6 +316,12 @@
 		7CC559D71580C3C0003ECCA0 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
 		7CC559D81580C3C1003ECCA0 /* 59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 59.png; sourceTree = "<group>"; };
 		7CC559D91580C3C1003ECCA0 /* 60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 60.png; sourceTree = "<group>"; };
+		7CD6D94516973E2E004BCB15 /* Coverage-list-for-GCSE-English.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Coverage-list-for-GCSE-English.pdf"; sourceTree = "<group>"; };
+		7CD6D94716973E41004BCB15 /* Coverage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coverage.h; sourceTree = "<group>"; };
+		7CD6D94816973E41004BCB15 /* Coverage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coverage.m; sourceTree = "<group>"; };
+		7CD6D94916973E41004BCB15 /* CoverageViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoverageViewer.h; sourceTree = "<group>"; };
+		7CD6D94A16973E41004BCB15 /* CoverageViewer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoverageViewer.m; sourceTree = "<group>"; };
+		7CD6D94B16973EB9004BCB15 /* nav_btn_coverage_deselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_btn_coverage_deselected.png; sourceTree = "<group>"; };
 		7CFA6EED1590800C00EE44A1 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		7CFA6EEE1590800C00EE44A1 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
 		7CFA6EEF1590800C00EE44A1 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
@@ -359,6 +369,7 @@
 		7C288E52157CD84100D0C411 = {
 			isa = PBXGroup;
 			children = (
+				7CD6D94316973E1F004BCB15 /* Files */,
 				7CFA6EEC1590800C00EE44A1 /* facebook-ios-sdk */,
 				7CAC57371580AB9500D6C840 /* Analytics */,
 				7CAC57321580AB7A00D6C840 /* VideoImages */,
@@ -481,6 +492,7 @@
 		7CAC57021580A9B000D6C840 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				7CD6D94B16973EB9004BCB15 /* nav_btn_coverage_deselected.png */,
 				7C37D62A162D8B7800122A88 /* btn_videos_deselected.png */,
 				7CAC57071580A9C900D6C840 /* 60-signpost.png */,
 			);
@@ -521,6 +533,10 @@
 				7CAC572E1580AB4100D6C840 /* HowtoUse.m */,
 				7CFA6F001590847500EE44A1 /* PopUpTableviewViewController.h */,
 				7CFA6F011590847500EE44A1 /* PopUpTableviewViewController.m */,
+				7CD6D94716973E41004BCB15 /* Coverage.h */,
+				7CD6D94816973E41004BCB15 /* Coverage.m */,
+				7CD6D94916973E41004BCB15 /* CoverageViewer.h */,
+				7CD6D94A16973E41004BCB15 /* CoverageViewer.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -620,6 +636,14 @@
 				7CAC57391580ABAF00D6C840 /* libGoogleAnalytics.a */,
 			);
 			name = Analytics;
+			sourceTree = "<group>";
+		};
+		7CD6D94316973E1F004BCB15 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CD6D94516973E2E004BCB15 /* Coverage-list-for-GCSE-English.pdf */,
+			);
+			name = Files;
 			sourceTree = "<group>";
 		};
 		7CFA6EEC1590800C00EE44A1 /* facebook-ios-sdk */ = {
@@ -804,6 +828,8 @@
 				7C8F816E165E6757004511A6 /* Icon-Small-50@2x.png in Resources */,
 				7C8F8171165E676A004511A6 /* Icon-72.png in Resources */,
 				7C8F8172165E676A004511A6 /* Icon-72@2x.png in Resources */,
+				7CD6D94616973E2E004BCB15 /* Coverage-list-for-GCSE-English.pdf in Resources */,
+				7CD6D94C16973EB9004BCB15 /* nav_btn_coverage_deselected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,6 +840,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CD6D94D16973F07004BCB15 /* Coverage.m in Sources */,
+				7CD6D94E16973F07004BCB15 /* CoverageViewer.m in Sources */,
 				7C37D631162D8D1B00122A88 /* TransparentToolBar.m in Sources */,
 				7C37D630162D8D0700122A88 /* UnderlinedButton.m in Sources */,
 				7CFA6F0915908F7E00EE44A1 /* PopUpTableviewViewController.m in Sources */,

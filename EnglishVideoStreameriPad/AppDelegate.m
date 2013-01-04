@@ -38,10 +38,10 @@ static NSString* const kAnalyticsAccountId = @"UA-32471393-1";
 
     //Remove useless tabbarItems ..
     NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:tabBarController.viewControllers];
-    [viewControllers removeObjectAtIndex:1];
-    [viewControllers removeObjectAtIndex:2];
-    [viewControllers removeObjectAtIndex:2];
-    [viewControllers removeObjectAtIndex:2];
+    //[viewControllers removeObjectAtIndex:1];
+    [viewControllers removeObjectAtIndex:3];
+    [viewControllers removeObjectAtIndex:3];
+    [viewControllers removeObjectAtIndex:3];
     [tabBarController setViewControllers:viewControllers];
     
     SecondThread = nil;

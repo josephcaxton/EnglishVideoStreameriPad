@@ -17,7 +17,7 @@
 @implementation FreeVideosClass
 
 
-@synthesize ArrayofConfigObjects,ProductIDs,ImageObjects,ProductsSubscibedTo,FullSubscription,popover;
+@synthesize ArrayofConfigObjects,filteredArrayofConfigObjects,ProductIDs,ImageObjects,ProductsSubscibedTo,FullSubscription,popover,mySearchBar;
 
 
 
@@ -132,7 +132,7 @@
     
     
     ArrayofConfigObjects = [[NSMutableArray alloc] init];
-    
+     filteredArrayofConfigObjects = [[NSMutableArray alloc] init];
    
         
     }
@@ -144,6 +144,15 @@
     }
 	
     [appDelegate.SecondThread cancel];
+    
+    mySearchBar = [[UISearchBar alloc] init];
+    mySearchBar.placeholder = @"Type a search term";
+    mySearchBar.tintColor = [UIColor blackColor];
+    mySearchBar.delegate = self;
+    [mySearchBar sizeToFit];
+    [mySearchBar setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+    [mySearchBar sizeToFit];
+    self.tableView.tableHeaderView = mySearchBar;
         
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -227,6 +236,7 @@
      //NSLog(@"%@", appDelegate.TempSubscibedProducts);
      //NSLog(@"%@",  ProductsSubscibedTo);
     [ArrayofConfigObjects removeAllObjects];
+    [filteredArrayofConfigObjects removeAllObjects];
     [self MyParser:Dir];
     [self.tableView reloadData];
     
@@ -353,6 +363,7 @@
 		
 
 	}
+     filteredArrayofConfigObjects = [ArrayofConfigObjects mutableCopy];
 }
 
 
@@ -367,7 +378,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
    
-    NSInteger numberOfRows =[ArrayofConfigObjects count];
+    NSInteger numberOfRows =[filteredArrayofConfigObjects count];
 	
     return numberOfRows;
 	
@@ -384,7 +395,7 @@
     }
     
     
-    ConfigObject *obj = [ArrayofConfigObjects objectAtIndex:indexPath.row];
+    ConfigObject *obj = [filteredArrayofConfigObjects objectAtIndex:indexPath.row];
     //Change how image is loaded
     //NSString *PicLocation = [[NSString alloc] initWithFormat:@"%@",[obj Thumbnail]];
     //UIImage* theImage = [UIImage imageNamed:PicLocation];
@@ -497,7 +508,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    ConfigObject *obj = [ArrayofConfigObjects objectAtIndex:indexPath.row];
+    ConfigObject *obj = [filteredArrayofConfigObjects objectAtIndex:indexPath.row];
     
     if ([obj Free] == YES || [obj Subcribed] == YES || FullSubscription == TRUE) {
         
@@ -558,7 +569,7 @@
     
     int tag = sender.tag;
     
-    ConfigObject *obj = [ArrayofConfigObjects objectAtIndex:tag];
+    ConfigObject *obj = [filteredArrayofConfigObjects objectAtIndex:tag];
     
     VideoPlayer *VP1 = [[VideoPlayer alloc] initWithNibName:nil bundle:nil];
     VP1.FreeView = self;
@@ -574,7 +585,7 @@
     
     int tag = sender.tag;
     
-    ConfigObject *obj = [ArrayofConfigObjects objectAtIndex:tag];
+    ConfigObject *obj = [filteredArrayofConfigObjects objectAtIndex:tag];
     
     [self ConfigureProductList:[obj ProductID]];
     
@@ -753,6 +764,75 @@
     NSString *str = @"https://userpub.itunes.apple.com/WebObjects/MZUserPublishing.woa/wa/addUserReview?id=533079978&type=Purple+Software"; 
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
+
+#pragma mark UISearchBarDelegate
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    
+    mySearchBar.showsCancelButton = YES;
+    mySearchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+    
+    //empty previous search results
+    [filteredArrayofConfigObjects removeAllObjects];
+    [self.tableView reloadData];
+}
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    mySearchBar.showsCancelButton = NO;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+    //empty previous search results
+    [filteredArrayofConfigObjects removeAllObjects];
+    
+    if([searchText isEqualToString:@""] || searchText==nil){
+        //show original dataset records
+        filteredArrayofConfigObjects = [ArrayofConfigObjects mutableCopy];
+        [self.tableView reloadData];
+    }
+    
+    else {
+        
+        for(ConfigObject *obj in ArrayofConfigObjects){
+            
+            NSRange foundInTitle = [[obj.VideoTitle lowercaseString] rangeOfString:[searchText lowercaseString]];
+            
+            if(foundInTitle.location != NSNotFound){
+                
+                [filteredArrayofConfigObjects addObject:obj];
+                
+            }else {
+                
+                NSRange foundInDescrption = [[obj.VideoDescription lowercaseString] rangeOfString:[searchText lowercaseString]];
+                
+                if(foundInDescrption.location != NSNotFound){
+                    
+                    [filteredArrayofConfigObjects addObject:obj];
+                }
+            }
+        }
+        
+        [self.tableView reloadData];
+        
+    }
+    
+    
+}
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    
+    [filteredArrayofConfigObjects removeAllObjects];
+    filteredArrayofConfigObjects = [ArrayofConfigObjects mutableCopy];
+    [self.tableView reloadData];
+    [searchBar resignFirstResponder];
+    searchBar.text = @"";
+    
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
+}
+
+
+
 
 
 

@@ -17,7 +17,7 @@
 @implementation FreeVideosClass
 
 
-@synthesize ArrayofConfigObjects,filteredArrayofConfigObjects,ProductIDs,ImageObjects,ProductsSubscibedTo,FullSubscription,popover,mySearchBar;
+@synthesize ArrayofConfigObjects,filteredArrayofConfigObjects,ProductIDs,ImageObjects,ProductsSubscibedTo,FullSubscription,popover,mySearchBar,buttons,SubscribeButton,ShareButton;
 
 
 
@@ -42,19 +42,24 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
       //NSLog(@"Subscibed products= %@", appDelegate.SubscibedProducts);
     
-    // create a toolbar where we can place some buttons
+    // create a toolbar where we can place some buttons, I have subclassed this to remove the default background
     TransparentToolBar* toolbar = [[TransparentToolBar alloc]
-                                   initWithFrame:CGRectMake(0, 0, 210, 45)];
+                                   initWithFrame:CGRectMake(0, 0, 110, 45)];
+    
+    
+    
+    
     
     
     // create an array for the buttons
-    NSMutableArray* buttons = [[NSMutableArray alloc] initWithCapacity:3];
+    buttons = [[NSMutableArray alloc] initWithCapacity:2];
     
-    //create Report Problem Button
-    UIBarButtonItem *SendSupportMail = [[UIBarButtonItem alloc] initWithTitle:@"Report Problem" style: UIBarButtonItemStyleBordered target:self action:@selector(ReportProblem:)];
-    //self.navigationItem.rightBarButtonItem = SendSupportMail;
-    
-     [buttons addObject:SendSupportMail];
+    /*create Report Problem Button
+     UIBarButtonItem *SendSupportMail = [[UIBarButtonItem alloc] initWithTitle:@"Report Problem" style: UIBarButtonItemStyleBordered target:self action:@selector(ReportProblem:)];
+     
+     //self.navigationItem.rightBarButtonItem = SendSupportMail;
+     
+     [buttons addObject:SendSupportMail]; */
     
     // create a spacer between the buttons
     UIBarButtonItem *spacer = [[UIBarButtonItem alloc]
@@ -63,11 +68,27 @@
                                action:nil];
     [buttons addObject:spacer];
     
-    // Create Share image button
-   
-    UIBarButtonItem *ShareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style: UIBarButtonItemStyleBordered target:self action:@selector(share:)];
+    // Create Share or Subscibe image button
+    UIImage *SubscribeImage = [UIImage imageNamed:@"subscribe.png"];
+    UIButton *Subscribe = [UIButton buttonWithType:UIButtonTypeCustom];
+    [Subscribe setBackgroundImage:SubscribeImage forState:UIControlStateNormal];
+    Subscribe.tag = 1;
+    Subscribe.bounds = CGRectMake( 0, 0, 103, 37 );
+    [Subscribe addTarget:self action:@selector(GoSubScribe:)forControlEvents:UIControlEventTouchUpInside];
+    SubscribeButton = [[UIBarButtonItem alloc] initWithCustomView:Subscribe];
     
-     [buttons addObject:ShareButton];
+    
+    ShareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style: UIBarButtonItemStyleBordered target:self action:@selector(share:)];
+    
+    if(appDelegate.AccessAll == TRUE){
+        
+        [buttons addObject:ShareButton];
+    }
+    else{
+        
+        [buttons addObject:SubscribeButton];
+        
+    }
     
     // put the buttons in the toolbar
     [toolbar setItems:buttons animated:NO];
@@ -75,13 +96,12 @@
     // place the toolbar into the navigation bar
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
                                               initWithCustomView:toolbar];
-    
     // Get Subscibed products from delegate
     /*if([appDelegate.SubscibedProducts count] > 0){
-        
-        ProductsSubscibedTo = [[NSMutableArray alloc] initWithArray:appDelegate.SubscibedProducts]; 
-        
-    }*/
+     
+     ProductsSubscibedTo = [[NSMutableArray alloc] initWithArray:appDelegate.SubscibedProducts];
+     
+     }*/
     
     // If User is fully subscibed by logging in or by identifying via DeviceID
     FullSubscription = appDelegate.AccessAll;
@@ -179,6 +199,8 @@
         
     }
     
+    [ArrayofConfigObjects removeAllObjects];
+    [filteredArrayofConfigObjects removeAllObjects];
         
     NSString *Dir = [appDelegate.applicationDocumentsDirectory stringByAppendingPathComponent:@"EnglishConfig.xml"]; 
    [self MyParser:Dir];
@@ -439,7 +461,7 @@
         NSString* FullDesciption = @"";
         // Check if we are in full subscription if so Change text to paid
         if(FullSubscription == TRUE){
-            FullDesciption = [descriptiontxt stringByAppendingString:@" - Subscription Paid"];
+            FullDesciption = [descriptiontxt stringByAppendingString:@""];
         }
         else {
             FullDesciption = [descriptiontxt stringByAppendingString:@" - Free gift if you share"];
@@ -454,7 +476,7 @@
         
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         NSString* descriptiontxt = [obj VideoDescription];
-        NSString* FullDesciption = [descriptiontxt stringByAppendingString:@" - Subscription Paid"];
+        NSString* FullDesciption = [descriptiontxt stringByAppendingString:@""];
         cell.detailTextLabel.text =FullDesciption;
         cell.detailTextLabel.textColor = [UIColor blueColor];
         
@@ -468,7 +490,7 @@
         cell.detailTextLabel.text = descriptiontxt;
         cell.detailTextLabel.textColor = [UIColor redColor];
         
-        UIImage *FreeImage = [UIImage imageNamed:@"subscribe.png"];
+        /*UIImage *FreeImage = [UIImage imageNamed:@"subscribe.png"];
         UIButton *btnSubscribe = [UIButton buttonWithType:UIButtonTypeCustom];
         UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
         if (orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationPortraitUpsideDown)
@@ -483,7 +505,7 @@
         [btnSubscribe setBackgroundImage:FreeImage forState:UIControlStateNormal];
         btnSubscribe.tag = indexPath.row;
         [btnSubscribe addTarget:self action:@selector(GoSubScribe:) forControlEvents:UIControlEventTouchUpInside];
-        [cell addSubview:btnSubscribe];
+        [cell addSubview:btnSubscribe];*/
         
     }
     
@@ -643,52 +665,6 @@
 }
 
 
--(IBAction)ReportProblem:(id)sender{
-	
-	if ([MFMailComposeViewController canSendMail]) {
-        
-        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        NSString *DeviceID = [prefs stringForKey:@"LCUIID"];
-        
-        NSArray *SendTo = [NSArray arrayWithObjects:@"support@LearnersCloud.com",nil];
-        
-        MFMailComposeViewController *SendMailcontroller = [[MFMailComposeViewController alloc]init];
-        SendMailcontroller.mailComposeDelegate = self;
-        [SendMailcontroller setToRecipients:SendTo];
-        [SendMailcontroller setSubject:[NSString stringWithFormat:@"%@ English video streaming iPad",DeviceID]];
-        
-        [SendMailcontroller setMessageBody:[NSString stringWithFormat:@"Add message here "] isHTML:NO];
-        [self presentModalViewController:SendMailcontroller animated:YES];
-        
-		
-	}
-	
-	else {
-		UIAlertView *Alert = [[UIAlertView alloc] initWithTitle: @"Cannot send mail" 
-                                                        message: @"Device is unable to send email in its current state. Configure email" delegate: self 
-                                              cancelButtonTitle: @"Ok" otherButtonTitles: nil];
-		
-		
-		
-		[Alert show];
-		
-		
-	}
-    
-	
-}
-
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{
-	
-	
-	[self becomeFirstResponder];
-	[self dismissModalViewControllerAnimated:YES];
-	
-	
-	
-	
-}
 
 - (IBAction)share:(id)sender{
     UIBarButtonItem *Barbutton = (UIBarButtonItem*)sender;
@@ -783,7 +759,9 @@
     //empty previous search results
     [filteredArrayofConfigObjects removeAllObjects];
     
-    if([searchText isEqualToString:@""] || searchText==nil){
+     NSString *searchString = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if([searchString isEqualToString:@""] || searchString==nil){
         //show original dataset records
         filteredArrayofConfigObjects = [ArrayofConfigObjects mutableCopy];
         [self.tableView reloadData];
@@ -793,7 +771,7 @@
         
         for(ConfigObject *obj in ArrayofConfigObjects){
             
-            NSRange foundInTitle = [[obj.VideoTitle lowercaseString] rangeOfString:[searchText lowercaseString]];
+            NSRange foundInTitle = [[obj.VideoTitle lowercaseString] rangeOfString:[searchString lowercaseString]];
             
             if(foundInTitle.location != NSNotFound){
                 
@@ -801,7 +779,7 @@
                 
             }else {
                 
-                NSRange foundInDescrption = [[obj.VideoDescription lowercaseString] rangeOfString:[searchText lowercaseString]];
+                NSRange foundInDescrption = [[obj.VideoDescription lowercaseString] rangeOfString:[searchString lowercaseString]];
                 
                 if(foundInDescrption.location != NSNotFound){
                     

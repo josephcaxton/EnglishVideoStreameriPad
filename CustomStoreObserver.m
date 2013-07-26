@@ -177,7 +177,7 @@
     }
 
     
-    if ([[theProductID lowercaseString] isEqualToString:@"englishipad1month"] ){
+   else if ([[theProductID lowercaseString] isEqualToString:@"englishipad1month"] ){
         
         return @"31";
         

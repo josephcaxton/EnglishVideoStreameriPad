@@ -48,7 +48,7 @@ static NSString* const kAnalyticsAccountId = @"UA-32471393-1";
     [tabBarController setViewControllers:viewControllers];
     
     SecondThread = nil;
-    DomainName = @"http://learnerscloud.com";
+    DomainName = @"https://learnerscloud.com";
     
     
     //[window addSubview: tabBarController.view];
@@ -532,7 +532,7 @@ static NSString* const kAnalyticsAccountId = @"UA-32471393-1";
     
     
     NSURLConnection *conn;
-    NSString *queryString = [NSString stringWithFormat:@"http://www.learnerscloud.com/services/ios/deviceToken.asmx/Update?UDID=%@&deviceToken=%@" , DeviceUDID, DeviceToken ];
+    NSString *queryString = [NSString stringWithFormat:@"http://www.learnerscloud.com/services/ios/videosubscription.asmx/UpdateDeviceToken?UDID=%@&deviceToken=%@" , DeviceUDID, DeviceToken ];
     NSURL *url = [NSURL URLWithString:queryString];
     
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];

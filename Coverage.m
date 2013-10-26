@@ -58,10 +58,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    self.FirstTable.center = self.view.center;
-    
-    UIEdgeInsets inset = UIEdgeInsetsMake(150, 0, 0, 0);
-    self.FirstTable.contentInset = inset;
+     [self willAnimateRotationToInterfaceOrientation:self.interfaceOrientation duration:1];
     
     
     
@@ -165,9 +162,19 @@
 }
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{
     
-    self.FirstTable.center = self.view.center;
+    if (interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown ) {
+        
+        self.FirstTable.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT);
+        
+    }
+    else {
+        self.FirstTable.frame = CGRectMake(0,0,SCREEN_HEIGHT + 80 ,SCREEN_WIDTH);
+        
+    }
     
-    // [FirstTable reloadData];
+    
+    
+    
     
     
 }

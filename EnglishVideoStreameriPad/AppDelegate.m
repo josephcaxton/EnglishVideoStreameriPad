@@ -225,7 +225,7 @@ static NSString* const kAnalyticsAccountId = @"UA-32471393-1";
             
         }
         
-    
+    }
 
     
 }

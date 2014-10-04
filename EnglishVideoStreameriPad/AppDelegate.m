@@ -48,7 +48,7 @@ static NSString* const kAnalyticsAccountId = @"UA-32471393-1";
     [tabBarController setViewControllers:viewControllers];
     
     SecondThread = nil;
-    DomainName = @"https://learnerscloud.com";
+    DomainName = @"https://www.learnerscloud.com";
     
     // This flag 0 = do nothing  1= login  2 = logout
     FlagToLoginOrLogout = [NSNumber numberWithInteger:0];
